@@ -19,20 +19,32 @@ import java.security.NoSuchAlgorithmException;
 public class Daftar extends AppCompatActivity {
 
 
-    EditText namaLengkap_text;
-    Button daftar_btn;
-    private static Button button_spm;
-    String namaLengkap;
-    EditText noktp_text;
-    Object noktp;
 
+
+    EditText name,noktp,username,password,email,nohp ;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_daftar);
-        /*onButtonClickListener();*/
+        name =(EditText)findViewById(R.id.nama);
+        noktp =(EditText)findViewById(R.id.noktp);
+        username=(EditText)findViewById(R.id.username);
+        password=(EditText)findViewById(R.id.password);
+        email=(EditText)findViewById(R.id.email);
+        nohp=(EditText)findViewById(R.id.nohp);
 
+    }
+    public void onClicklogin(View view) {
+        String namalengkap = name.getText().toString();
+        String ktp = noktp.getText().toString();
+        String user = username.getText().toString();
+        String pass= password.getText().toString();
+        String emaill=email.getText().toString();
+        String nohpp = nohp.getText().toString();
+
+        Intent hasilIntent = new Intent(this, Menu_Laporan.class);
+        startActivity(hasilIntent);
     }
 
 

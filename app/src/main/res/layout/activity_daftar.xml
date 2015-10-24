@@ -10,7 +10,7 @@
     <EditText
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/namaLengkap_text"
+        android:id="@+id/nama"
         android:layout_alignParentRight="true"
         android:layout_alignParentEnd="true"
         android:layout_marginTop="80dp"
@@ -21,10 +21,10 @@
     <EditText
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/noktp_text"
-        android:layout_below="@+id/namaLengkap_text"
-        android:layout_alignRight="@+id/namaLengkap_text"
-        android:layout_alignEnd="@+id/namaLengkap_text"
+        android:id="@+id/noktp"
+        android:layout_below="@+id/nama"
+        android:layout_alignRight="@+id/nama"
+        android:layout_alignEnd="@+id/nama"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
         android:layout_marginTop="5dp"
@@ -33,10 +33,10 @@
     <EditText
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/editText3"
-        android:layout_below="@+id/noktp_text"
-        android:layout_alignRight="@+id/noktp_text"
-        android:layout_alignEnd="@+id/noktp_text"
+        android:id="@+id/username"
+        android:layout_below="@+id/noktp"
+        android:layout_alignRight="@+id/noktp"
+        android:layout_alignEnd="@+id/noktp"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
         android:layout_marginTop="5dp"
@@ -45,21 +45,21 @@
     <EditText
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/editText4"
-        android:layout_below="@+id/editText3"
-        android:layout_alignLeft="@+id/editText3"
-        android:layout_alignStart="@+id/editText3"
-        android:layout_alignRight="@+id/editText3"
-        android:layout_alignEnd="@+id/editText3"
+        android:id="@+id/password"
+        android:layout_below="@+id/username"
+        android:layout_alignLeft="@+id/username"
+        android:layout_alignStart="@+id/username"
+        android:layout_alignRight="@+id/username"
+        android:layout_alignEnd="@+id/username"
         android:layout_marginTop="5dp"
-        android:text="Password" />
+        android:text="password" />
 
     <EditText
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/editText5"
+        android:id="@+id/email"
         android:text="Email"
-        android:layout_below="@+id/editText4"
+        android:layout_below="@+id/password"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
         android:layout_alignParentRight="true"
@@ -71,7 +71,7 @@
         android:layout_height="wrap_content"
         android:text="Sign Up"
         android:id="@+id/daftar"
-        android:layout_below="@+id/editText5"
+        android:layout_below="@+id/email"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="66dp" />
 
@@ -89,12 +89,12 @@
     <EditText
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/editText6"
+        android:id="@+id/nohp"
         android:text="No HP"
-        android:layout_below="@+id/editText5"
+        android:layout_below="@+id/email"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
-        android:layout_alignRight="@+id/editText5"
-        android:layout_alignEnd="@+id/editText5"
+        android:layout_alignRight="@+id/email"
+        android:layout_alignEnd="@+id/email"
         android:layout_marginTop="5dp" />
 </RelativeLayout>
