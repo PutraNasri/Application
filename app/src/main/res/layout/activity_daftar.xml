@@ -73,7 +73,8 @@
         android:id="@+id/daftar"
         android:layout_below="@+id/email"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="66dp" />
+        android:layout_marginTop="66dp"
+        android:onClick="onClickdaftar" />
 
     <TextView
         android:layout_width="wrap_content"

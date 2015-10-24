@@ -15,8 +15,11 @@ String nama , noktp , username , password ,email, nohp;
         this.nohp=nohp;
 
     }
-    public Contact(String nama, String noktp, String username, String password){
+    public Contact(String username, String password){
         this.username=username;
         this.password=password;
+    }
+
+    public Contact(String nama, String email, String username, String password) {
     }
 }

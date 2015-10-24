@@ -44,11 +44,12 @@ public class ServerRequests {
     public void storeDataInBackground(Contact contact, GetUserCallback callback) {
 
         progressDialog.show();
+        new StoreDataAsyncTask(contact , callback).execute();
     }
 
     public void fetchDataInBackground(Contact contact, GetUserCallback callback) {
         progressDialog.show();
-
+        new FetchDataAsyncTask(contact, callback).execute();
     }
 
     public class StoreDataAsyncTask extends AsyncTask<Void, Void, Void> {
@@ -78,6 +79,7 @@ public class ServerRequests {
 
             HttpClient client=new DefaultHttpClient(httpRequestParams);
             HttpPost post =new HttpPost(SERVER_ADDRESS + "Register.php");
+
             try{
                 post.setEntity(new UrlEncodedFormEntity(data_to_send));
                 client.execute(post);
@@ -121,7 +123,7 @@ public class ServerRequests {
             HttpClient client=new DefaultHttpClient(httpRequestParams);
             HttpPost post =new HttpPost(SERVER_ADDRESS + "FetchUserData.php");
 
-            Contact retunedContact = null;
+            Contact retunedContact=null;
             try{
                 post.setEntity(new UrlEncodedFormEntity(data_to_send));
                 HttpResponse httpResponse = client.execute(post);
@@ -130,27 +132,28 @@ public class ServerRequests {
                 String result = EntityUtils.toString(entity);
 
                 JSONObject jsonObject = new JSONObject(result);
+                retunedContact=null;
                 if (jsonObject.length()== 0)
                 {
                     retunedContact = null ;
                 }
                 else{
-                    String nama,noktp;
+                    String nama,email;
                     nama=null;
-                    noktp=null;
+                    email=null;
 
                     if (jsonObject.has("nama"))
                         nama=jsonObject.getString("nama");
-                    if (jsonObject.has("noktp"))
-                        nama=jsonObject.getString("noktp");
-                    retunedContact=new Contact(nama,noktp,contact.username,contact.password);
-                }
+                    if (jsonObject.has("email"))
+                        email=jsonObject.getString("email");
+                    retunedContact=new Contact(nama , email , contact.username , contact.password);
+            }
             }
             catch (Exception e){
                 e.printStackTrace();
             }
 
-            return null;
+            return retunedContact;
         }
 
         @Override

@@ -21,30 +21,38 @@ public class Daftar extends AppCompatActivity {
 
 
 
-    EditText name,noktp,username,password,email,nohp ;
+    EditText e_name,e_noktp,e_username,e_password,e_email,e_nohp ;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_daftar);
-        name =(EditText)findViewById(R.id.nama);
-        noktp =(EditText)findViewById(R.id.noktp);
-        username=(EditText)findViewById(R.id.username);
-        password=(EditText)findViewById(R.id.password);
-        email=(EditText)findViewById(R.id.email);
-        nohp=(EditText)findViewById(R.id.nohp);
+        e_name =(EditText)findViewById(R.id.nama);
+        e_noktp =(EditText)findViewById(R.id.noktp);
+        e_username=(EditText)findViewById(R.id.username);
+        e_password=(EditText)findViewById(R.id.password);
+        e_email=(EditText)findViewById(R.id.email);
+        e_nohp=(EditText)findViewById(R.id.nohp);
 
     }
-    public void onClicklogin(View view) {
-        String namalengkap = name.getText().toString();
-        String ktp = noktp.getText().toString();
-        String user = username.getText().toString();
-        String pass= password.getText().toString();
-        String emaill=email.getText().toString();
-        String nohpp = nohp.getText().toString();
+    public void onClickdaftar(View view) {
+        String nama = e_name.getText().toString();
+        String noktp = e_noktp.getText().toString();
+        String username = e_username.getText().toString();
+        String password= e_password.getText().toString();
+        String email=e_email.getText().toString();
+        String nohp = e_nohp.getText().toString();
 
-        Intent hasilIntent = new Intent(this, Menu_Laporan.class);
-        startActivity(hasilIntent);
+       Contact contact;
+        contact = new Contact(nama,noktp,username,password,email,nohp);
+        ServerRequests serverRequests =new ServerRequests(this);
+        serverRequests.storeDataInBackground(contact, new GetUserCallback() {
+            @Override
+            public void done(Contact returnedContact) {
+                Intent hasilIntent = new Intent(Daftar.this, MainActivity.class);
+                startActivity(hasilIntent);
+            }
+        });
     }
 
 
