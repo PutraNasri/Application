@@ -27,8 +27,8 @@ public class FormLaporan extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_form_laporan);
-        Intent hasilIntent = getIntent();
-        onClickListenerButton();
+
+
 
         Button clik =(Button) findViewById(R.id.take);
         result_photo = (ImageView) findViewById(R.id.camera);

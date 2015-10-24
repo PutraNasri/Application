@@ -49,6 +49,8 @@
         </activity>
         <activity android:name=".Laporan_wargatidakmampu" >
         </activity>
+        <activity android:name=".Menu_Laporan" >
+        </activity>
     </application>
 
 </manifest>
