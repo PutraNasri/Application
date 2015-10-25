@@ -2,63 +2,64 @@ package com.example.addd.application;
 
 import android.content.Context;
 import android.content.SharedPreferences;
-import android.provider.ContactsContract;
 
 /**
- * Created by addd on 10/24/2015.
+ * Created by priya on 7/16/2015.
  */
 public class LocalDatabase {
     public static final String SP_NAME = "UserDetails";
     SharedPreferences localDatabase;
 
-    public  LocalDatabase (Context context)
+    public LocalDatabase(Context context)
     {
-        localDatabase = context.getSharedPreferences(SP_NAME,0);
-
+        localDatabase = context.getSharedPreferences(SP_NAME , 0);
     }
-    public  void storeData(Contact contact)
+
+    public void storeData(Contact contact)
     {
-SharedPreferences.Editor spEditor =localDatabase.edit();
-        spEditor.putString("nama",contact.nama);
-        spEditor.putString("noktp",contact.noktp);
-        spEditor.putString("username",contact.username);
-        spEditor.putString("password",contact.password);
-        spEditor.putString("email",contact.email);
-        spEditor.putString("nohp",contact.nohp);
-spEditor.commit();
-
-
+        SharedPreferences.Editor spEditor = localDatabase.edit();
+        spEditor.putString("Name" , contact.name);
+        spEditor.putString("Email" , contact.email);
+        spEditor.putString("Username" , contact.username);
+        spEditor.putString("Password" , contact.password);
+        spEditor.commit();
     }
-    public Contact getLoggedInUser(){
-       String nama =localDatabase.getString("nama","");
-        String noktp=localDatabase.getString("noktp","");
-        String username=localDatabase.getString("username","");
-        String password = localDatabase.getString("password","");
-        String email=localDatabase.getString("email", "");
-        String nohp=localDatabase.getString("nohp", "");
 
-        Contact storedContact = new Contact(nama,noktp,username,password,email,nohp);
+    public Contact getLoggedInUser()
+    {
+        String name = localDatabase.getString("Name" , "");
+        String email = localDatabase.getString("Email" , "");
+        String username = localDatabase.getString("Username" , "");
+        String password = localDatabase.getString("Password" , "");
+
+        Contact storedContact = new Contact(name , email , username , password);
         return storedContact;
     }
 
-    public void setUserLoggedIn(boolean loggedIn){
-
+    public void setUserLoggedIn(boolean loggedIn)
+    {
         SharedPreferences.Editor spEditor = localDatabase.edit();
-        spEditor.putBoolean("logedIn", loggedIn);
+        spEditor.putBoolean("loggedIn" , loggedIn);
         spEditor.commit();
 
     }
+
     public boolean getUserLoggedIn()
     {
-if(localDatabase.getBoolean("loggedIn", false))
-    return true;
+        if(localDatabase.getBoolean("loggedIn" , false))
+            return true;
         else
-    return false;
+            return false;
     }
-    public void cleardata()
+
+    public void clearData()
     {
-SharedPreferences.Editor spEditor =localDatabase.edit();
+        SharedPreferences.Editor spEditor = localDatabase.edit();
         spEditor.clear();
         spEditor.commit();
     }
+
+
+
+
 }

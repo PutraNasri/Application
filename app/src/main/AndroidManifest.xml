@@ -10,13 +10,17 @@
         android:name="android.hardware.camera2"
         android:required="true" />
 
-    <uses-permission android:name="android.permission.INTERNET" />
-
-
     <permission
         android:name="com.example.gcm.permission.C2D_MESSAGE"
         android:protectionLevel="signature" />
 
+    <uses-permission android:name="maps.elektro.com.draw.permission.MAPS_RECEIVE" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="com.google.android.providers.gsf.permission.READ_GSERVICES" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
 
     <application
         android:allowBackup="true"
@@ -31,8 +35,14 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".Daftar" >
-        </activity>
+        <!-- Google API Key -->
+        <meta-data
+            android:name="com.google.android.maps.v2.API_KEY"
+            android:value="AIzaSyAGnNsqZFjc807WaRDIBgFPB4HiYIBNRnU" />
+        <meta-data
+            android:name="com.google.android.gms.version"
+            android:value="@integer/google_play_services_version" />
+        /*67:20:58:64:EC:32:7C:9D:C1:6C:17:A3:2F:2C:E4:DE:EF:7F:6A:E3*/
         <activity android:name=".FormLaporan" >
         </activity>
         <activity
@@ -43,6 +53,10 @@
         <activity android:name=".Laporan_wargatidakmampu" >
         </activity>
         <activity android:name=".Menu_Laporan" >
+        </activity>
+        <activity android:name=".Register" >
+        </activity>
+        <activity android:name=".Maps" >
         </activity>
     </application>
 

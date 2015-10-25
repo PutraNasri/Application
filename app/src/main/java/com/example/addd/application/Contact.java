@@ -4,22 +4,22 @@ package com.example.addd.application;
  * Created by addd on 10/24/2015.
  */
 public class Contact {
-String nama , noktp , username , password ,email, nohp;
-    public  Contact(String nama , String noktp , String username , String password , String email, String nohp)
+    String name , email , username , password , nama , noktp , jumlah , pekerjaan , gaji;
+
+    public Contact(String name , String email , String username , String password)
     {
-        this.nama=nama;
-        this.noktp=noktp;
-        this.username=username;
-        this.password=password;
-        this.email=email;
-        this.nohp=nohp;
+        this.name = name;
+        this.email = email ;
+        this.username = username;
+        this.password = password;
 
     }
-    public Contact(String username, String password){
-        this.username=username;
-        this.password=password;
-    }
 
-    public Contact(String nama, String email, String username, String password) {
+
+
+    public Contact(String username , String password)
+    {
+        this.username = username;
+        this.password = password;
     }
 }

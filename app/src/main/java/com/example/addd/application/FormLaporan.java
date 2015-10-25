@@ -1,9 +1,11 @@
 package com.example.addd.application;
 
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.graphics.Bitmap;
 import android.provider.MediaStore;
+import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -59,7 +61,7 @@ public class FormLaporan extends AppCompatActivity {
 
     {
         radio_g = (RadioGroup) findViewById(R.id.radioGroup);
-        daftar= (Button) findViewById(R.id.daftar);
+
 
         daftar.setOnClickListener(
                 new View.OnClickListener() {
@@ -72,6 +74,24 @@ public class FormLaporan extends AppCompatActivity {
                 }
         );
     }
+    public void onClicklapor2(View view) {
+        AlertDialog.Builder a_builder = new AlertDialog.Builder(FormLaporan.this);
+        a_builder.setMessage("laporan anda segera di proses dengan cepat")
+                .setCancelable(false)
+                .setPositiveButton("OK", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        dialog.cancel();
+                        Intent hasilIntent = new Intent(FormLaporan.this, Menu_Laporan.class);
+                        startActivity(hasilIntent);
 
+                    }
+                });
+        AlertDialog alert = a_builder.create();
+        alert.setTitle("Info");
+        alert.show();
+
+
+    }
 
 }

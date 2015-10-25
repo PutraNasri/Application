@@ -27,4 +27,10 @@ public class Menu_Laporan extends AppCompatActivity {
         Intent hasilIntent = new Intent(this, Laporan_wargatidakmampu.class);
         startActivity(hasilIntent);
     }
+    public void onClickmaps(View view) {
+
+
+        Intent hasilIntent = new Intent(this, Maps.class);
+        startActivity(hasilIntent);
+    }
 }

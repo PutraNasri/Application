@@ -5,90 +5,99 @@
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
     android:paddingBottom="@dimen/activity_vertical_margin"
-    tools:context="com.example.addd.application.Laporan_wargatidakmampu">
+    tools:context="com.example.addd.application.Laporan_wargatidakmampu"
+    android:background="@drawable/ba">
 
     <EditText
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/editText"
+        android:id="@+id/TFnama"
         android:layout_alignParentTop="true"
         android:layout_alignParentRight="true"
         android:layout_alignParentEnd="true"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
-        android:text="Nama Kepala Keluarga" />
+        android:hint="Nama Kepala Keluarga"
+        android:layout_marginTop="20dp" />
 
     <EditText
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/editText2"
-        android:layout_below="@+id/editText"
+        android:id="@+id/TFnoktp"
+        android:layout_below="@+id/TFnama"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
         android:layout_alignParentRight="true"
         android:layout_alignParentEnd="true"
-        android:text="No KTP" />
+        android:hint="No KTP" />
 
     <EditText
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/editText7"
-        android:layout_below="@+id/editText2"
-        android:layout_alignRight="@+id/editText2"
-        android:layout_alignEnd="@+id/editText2"
+        android:id="@+id/TFjumlah"
+        android:layout_below="@+id/TFnoktp"
+        android:layout_alignRight="@+id/TFnoktp"
+        android:layout_alignEnd="@+id/TFnoktp"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
-        android:text="Jumlah Anggota Keluarga" />
+        android:hint="Jumlah Anggota Keluarga" />
 
     <EditText
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/editText8"
-        android:layout_below="@+id/editText7"
-        android:layout_alignRight="@+id/editText7"
-        android:layout_alignEnd="@+id/editText7"
+        android:id="@+id/TFpekerjaan"
+        android:layout_below="@+id/TFjumlah"
+        android:layout_alignRight="@+id/TFjumlah"
+        android:layout_alignEnd="@+id/TFjumlah"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
-        android:text="Pekerjaan" />
+        android:hint="Pekerjaan" />
 
     <EditText
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/editText9"
-        android:layout_below="@+id/editText8"
-        android:layout_alignRight="@+id/editText8"
-        android:layout_alignEnd="@+id/editText8"
+        android:id="@+id/TFgaji"
+        android:layout_below="@+id/TFpekerjaan"
+        android:layout_alignRight="@+id/TFpekerjaan"
+        android:layout_alignEnd="@+id/TFpekerjaan"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
-        android:text="Pendapatan Perbulan" />
+        android:hint="Pendapatan Perbulan" />
 
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="take image"
-        android:id="@+id/button"
-        android:layout_below="@+id/editText9"
+        android:id="@+id/take"
+        android:layout_below="@+id/TFgaji"
         android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true" />
+        android:layout_alignParentStart="true"
+        android:onClick="launchCamera"
+        android:background="#4674c8"
+        android:alpha="0.9" />
 
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="location"
         android:id="@+id/button3"
-        android:layout_alignTop="@+id/button"
-        android:layout_toRightOf="@+id/button"
-        android:layout_toEndOf="@+id/button" />
+        android:layout_alignTop="@+id/take"
+        android:layout_toRightOf="@+id/take"
+        android:layout_toEndOf="@+id/take"
+        android:background="#4674c8"
+        android:layout_marginLeft="5dp"
+        android:alpha="0.9" />
 
     <ImageView
         android:layout_width="wrap_content"
         android:layout_height="150dp"
-        android:id="@+id/imageView2"
-        android:layout_below="@+id/button"
+        android:id="@+id/camera"
+        android:layout_below="@+id/take"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
-        android:layout_alignRight="@+id/button3"
-        android:layout_alignEnd="@+id/button3" />
+        android:layout_alignRight="@+id/lapor"
+        android:layout_alignEnd="@+id/lapor"
+        android:alpha="0.9" />
 
     <EditText
         android:layout_width="wrap_content"
@@ -96,14 +105,22 @@
         android:id="@+id/editText10"
         android:layout_alignTop="@+id/button3"
         android:layout_toRightOf="@+id/button3"
-        android:layout_alignRight="@+id/editText9"
-        android:layout_alignEnd="@+id/editText9" />
+        android:layout_alignRight="@+id/TFgaji"
+        android:layout_alignEnd="@+id/TFgaji"
+        android:layout_marginLeft="2dp" />
 
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="laporkan"
-        android:id="@+id/button4"
+        android:id="@+id/lapor"
         android:layout_alignParentBottom="true"
-        android:layout_centerHorizontal="true" />
+        android:nestedScrollingEnabled="false"
+        android:layout_alignRight="@+id/editText10"
+        android:layout_alignEnd="@+id/editText10"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:background="#4674c8"
+        android:alpha="0.9"
+        android:onClick="onClicklapor" />
 </RelativeLayout>
