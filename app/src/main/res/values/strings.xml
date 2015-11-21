@@ -1,6 +1,6 @@
 <resources>
-    <string name="app_name"></string>
-    <string name="app_namee"></string>
+    <string name="app_name">DOT</string>
+    <string name="app_namee">DOT</string>
     <string name="title_activity_drawble">Drawble</string>
 
     <string name="navigation_drawer_open">Open navigation drawer</string>

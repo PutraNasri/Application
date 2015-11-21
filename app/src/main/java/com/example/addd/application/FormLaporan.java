@@ -4,6 +4,7 @@ import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.graphics.Bitmap;
+import android.os.AsyncTask;
 import android.provider.MediaStore;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
@@ -74,7 +75,21 @@ public class FormLaporan extends AppCompatActivity {
                 }
         );
     }
+
+   /* class Send extends AsyncTask<String, Void,long>{
+protected  Long doInBackground(String...urls){
+    String Nama=nama.getText().toString();
+
+}
+    }
+*/
+
+
     public void onClicklapor2(View view) {
+
+
+
+
         AlertDialog.Builder a_builder = new AlertDialog.Builder(FormLaporan.this);
         a_builder.setMessage("laporan anda segera di proses dengan cepat")
                 .setCancelable(false)
@@ -94,4 +109,11 @@ public class FormLaporan extends AppCompatActivity {
 
     }
 
+    /*
+    public  void send(View v){
+        new Send().execute();
+
+    }
+
+    class Send extends AsyncTask */
 }
